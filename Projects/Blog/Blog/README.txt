@@ -9,6 +9,11 @@ Identity, admin and admin panel,
 Image Upload & Streaming,
 CSS styling,
 JavaScript text editor,
+Project transfer to MacOS
+SQL Database (Azure Data Studio + Docker)
+
+
+
 
 LINKS:
 
@@ -22,3 +27,8 @@ COMMENTS:
 
 ->Identity and admin,
 "EntityFramework" nuget version 5.0.0 (otherwise not working)
+
+->SQL Database (Azure Data Studio + Docker)
+Docker has to be active with running azure-sql-edge image in it
+- https://database.guide/how-to-install-sql-server-on-an-m1-mac-arm64/
+- https://www.youtube.com/watch?v=bbng41TLl8M
