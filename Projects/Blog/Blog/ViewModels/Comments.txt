@@ -1,0 +1,5 @@
+Comments:
+Items in "Models" folder are tracked in DB,
+Items in "ViewModels" folder serves for view;
+
+"PostViewModel" used for actual "Post" creation;

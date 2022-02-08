@@ -1,0 +1,1 @@
+Folder "static" consists of static files/images

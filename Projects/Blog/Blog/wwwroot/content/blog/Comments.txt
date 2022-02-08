@@ -1,0 +1,2 @@
+Folder "blog" consists of dynamic files/images
+those are uploaded, when we create the post 

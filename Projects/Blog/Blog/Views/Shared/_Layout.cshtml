@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    @* "title" will be link, "meta" will be short desc in google search results: *@
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+
+
+    @*adds css styling link:*@
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <div>
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Home" asp-action="Index" asp-route-category="Programing">Programing Posts</a>
+            <a asp-controller="Panel" asp-action="Index">Admin Panel</a>
+
+            @if (User.Identity.IsAuthenticated)
+            {<a asp-controller="Auth" asp-action="Logout">Log-out</a> }
+            else
+            { <a asp-controller="Auth" asp-action="Login">Log-in</a>}
+        </nav>
+    </div>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    @* adds JavaScript Text Editor: *@
+    @RenderSection("scripts", false)
+</body>
+
+</html>
