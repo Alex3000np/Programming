@@ -30,7 +30,7 @@ namespace Blog
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
 
-                //seed DB:
+                //seeds DB:
                 dbContext.Database.EnsureCreated();
 
                 var adminRole = new IdentityRole("Admin");

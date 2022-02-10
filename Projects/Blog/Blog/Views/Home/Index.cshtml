@@ -6,6 +6,7 @@
     ViewBag.Title = "Blog website";
     ViewBag.Description = "Blog website about everything";
     ViewBag.Keywords = "blog website programming photography";
+    var base_path = Context.Request.PathBase;
 }
 
 
@@ -16,7 +17,7 @@
 <div class="container">
     @foreach (var post in Model)
     {
-        var image_path = $"/Image/{post.Image}";
+        var image_path = $"{base_path}/Image/{post.Image}";
 
         <a class="post" asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
             <img src="@image_path" />

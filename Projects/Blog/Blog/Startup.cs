@@ -64,8 +64,10 @@ namespace Blog
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+               
             }
+            //always use dev exceptions even in prudoction
+            app.UseDeveloperExceptionPage();
 
             //enables showing static files (images) from wwwroot
             app.UseStaticFiles();
