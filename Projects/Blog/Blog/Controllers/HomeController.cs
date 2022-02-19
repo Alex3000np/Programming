@@ -24,7 +24,6 @@ namespace Blog.Controllers
         public IActionResult Post(int id) =>
             View(_repo.getPost(id));
 
-
         //image streaming:
         [HttpGet("/Image/{image}")]
         public IActionResult Image(string image) =>

@@ -15,13 +15,10 @@ namespace Blog.ViewModels
         public String Body { get; set; } = "";
         public String CurrentImage { get; set; } = "";
 
-
-        // tags start
+        // tags
         public string Description { get; set; } = String.Empty;
         public string Tags { get; set; } = String.Empty;
         public string Category { get; set; } = String.Empty;
-        // tags end
-
 
         //Interfase for any file (image, video etc.)
         public IFormFile Image { get; set; } = null;

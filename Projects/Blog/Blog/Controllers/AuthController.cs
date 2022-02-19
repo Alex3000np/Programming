@@ -1,5 +1,4 @@
-﻿//
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Blog.ViewModels;
 using System.Threading.Tasks;
@@ -14,14 +13,12 @@ namespace Blog.Controllers
             _signInManager = signInManager;
         }
 
-        //show page:
         [HttpGet]
         public IActionResult Login()
         {
             return View(new LoginViewModel());
         }
 
-        //post login-form
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel)
         {

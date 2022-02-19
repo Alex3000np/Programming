@@ -14,13 +14,10 @@ namespace Blog.Models
         public String Body { get; set; } = String.Empty;
         public string Image { get; set; } = String.Empty;
 
-
-        // tags start
+        // tags 
         public string Description { get; set; } = String.Empty;
         public string Tags { get; set; } = String.Empty;
         public string Category { get; set; } = String.Empty;
-        // tags end
-
 
         public DateTime Created { get; set; } = DateTime.Now;
 

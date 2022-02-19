@@ -16,7 +16,7 @@ namespace Blog
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args)  //15 done, TODO publish to internet
         {
             //app build
             var host = CreateHostBuilder(args).Build();
@@ -58,7 +58,7 @@ namespace Blog
             {
                 Console.WriteLine(e.Message);
             }
-
+            
 
 
             //app run

@@ -9,6 +9,7 @@ using Blog.Data.FileManager;
 namespace Blog.Controllers
 {
     [Authorize(Roles = "Admin")]
+
     public class PanelController : Controller
     {
         IRepository _repo;
@@ -43,15 +44,9 @@ namespace Blog.Controllers
                     Body = post.Body,
                     CurrentImage = post.Image,
 
-
-
-                    //Tags
                     Description = post.Description,
                     Category = post.Category,
                     Tags = post.Tags,
-                    //
-
-
 
                 });
             }
