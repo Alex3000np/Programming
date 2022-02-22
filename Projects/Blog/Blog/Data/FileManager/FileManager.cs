@@ -15,10 +15,29 @@ namespace Blog.Data.FileManager
             _imagePath = iconfiguration["Path:Images"];
         }
 
+
         public FileStream ImageStream(string image)
         {
             return new FileStream(Path.Combine(_imagePath, image), FileMode.Open, FileAccess.Read);
         }
+
+
+        public bool RemoveImage(string image)
+        {
+            try
+            {
+                var file = Path.Combine(_imagePath, image);
+                if (File.Exists(file))
+                    File.Delete(file); return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+
+        }
+
 
         //saves uploaded file to folder:
         public async Task<string> SaveImage(IFormFile image)
@@ -50,5 +69,7 @@ namespace Blog.Data.FileManager
                 return "Error";
             }
         }
+
+
     }
 }

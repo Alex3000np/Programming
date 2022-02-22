@@ -8,10 +8,10 @@ Database,
 Identity, admin and admin panel,
 Image Upload & Streaming,
 CSS styling,
-JavaScript text editor, ...?
+JavaScript text editor
 Project transfer to MacOS
 SQL Database "Azure SQL Edge" - cloud (Azure Data Studio + Docker)
-
+Image size optimization
 
 --------------------------------------------------------------------------------
 LINKS:

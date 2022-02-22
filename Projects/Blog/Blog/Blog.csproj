@@ -32,6 +32,20 @@
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
+  
+ <!-- <ItemGroup>
+         <Content Update="wwwroot\content\blog" />
+  </ItemGroup>-->
+
+    <ItemGroup>
+         <Content Update="wwwroot\content\blog\*.*" CopyToPublishDirectory ="Never" />
+         <Content Update="wwwroot\lib\**\*.*" CopyToPublishDirectory ="Never" />
+         <Content Update="wwwroot\lib\**\dist\**\*.*" CopyToPublishDirectory ="Always" />
+  </ItemGroup>
+
+
+
+
   <ItemGroup>
     <None Include="wwwroot\content\blog\Comments.txt" />
     <None Include="wwwroot\content\static\Comments.txt" />

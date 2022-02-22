@@ -27,6 +27,7 @@ namespace Blog.Controllers
             return View(posts);
         }
 
+
         [HttpGet]
         public IActionResult Edit(int? id)
         {
@@ -52,6 +53,7 @@ namespace Blog.Controllers
             }
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Edit(PostViewModel postViewModel)
         {
@@ -66,17 +68,30 @@ namespace Blog.Controllers
 
             };
 
+
+
             if (postViewModel.Image == null)
                 post.Image = postViewModel.CurrentImage;
-            else post.Image = await _fileManager.SaveImage(postViewModel.Image);
+            else
+            {
+                if (!string.IsNullOrEmpty(postViewModel.CurrentImage))
+                    _fileManager.RemoveImage(postViewModel.CurrentImage);
+
+                post.Image = await _fileManager.SaveImage(postViewModel.Image);
+            }
+
+
+
 
             if (post.Id > 0) _repo.UpdatePost(post);
+
             else _repo.AddPost(post);
 
             if (await _repo.SavechangesAsync())
                 return RedirectToAction("Index");
             else return View(post);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Remove(int id)
