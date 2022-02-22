@@ -33,15 +33,15 @@
   </ItemGroup>
 
   
- <!-- <ItemGroup>
+  <ItemGroup>
          <Content Update="wwwroot\content\blog" />
-  </ItemGroup>-->
+  </ItemGroup>
 
-    <ItemGroup>
+<!--    <ItemGroup>
          <Content Update="wwwroot\content\blog\*.*" CopyToPublishDirectory ="Never" />
          <Content Update="wwwroot\lib\**\*.*" CopyToPublishDirectory ="Never" />
          <Content Update="wwwroot\lib\**\dist\**\*.*" CopyToPublishDirectory ="Always" />
-  </ItemGroup>
+  </ItemGroup>-->
 
 
 
