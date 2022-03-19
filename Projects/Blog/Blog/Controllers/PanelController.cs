@@ -75,7 +75,7 @@ namespace Blog.Controllers
             else
             {
                 if (!string.IsNullOrEmpty(postViewModel.CurrentImage))
-                    _fileManager.RemoveImage(postViewModel.CurrentImage);
+                     _fileManager.RemoveImage(postViewModel.CurrentImage);
 
                 post.Image = await _fileManager.SaveImage(postViewModel.Image);
             }

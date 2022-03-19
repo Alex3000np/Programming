@@ -25,6 +25,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="PhotoSauce.MagicScaler" Version="0.11.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +47,9 @@
 
 
 
+  <ItemGroup>
+    <None Remove="PhotoSauce.MagicScaler" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\content\blog\Comments.txt" />
     <None Include="wwwroot\content\static\Comments.txt" />

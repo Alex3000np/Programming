@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using PhotoSauce.MagicScaler;
+
 
 namespace Blog.Data.FileManager
 {
@@ -40,6 +42,9 @@ namespace Blog.Data.FileManager
 
 
         //saves uploaded file to folder:
+
+        //https://stackoverflow.com/questions/35027878/asp-net-core-image-upload-and-resize
+
         public async Task<string> SaveImage(IFormFile image)
         {
             try
@@ -56,20 +61,32 @@ namespace Blog.Data.FileManager
                 var fileName = $"img_{DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss")}{mimeType}";
 
                 //"using" - limits IDisposable object to scope of "using" expression
-                using (var fileStram = new FileStream(Path.Combine(save_path, fileName), FileMode.Create))
+                using (var fileStream = new FileStream(Path.Combine(save_path, fileName), FileMode.Create))
                 {
-                    await image.CopyToAsync(fileStram);
+                    await image.CopyToAsync(fileStream);
+                    //MagicImageProcessor.ProcessImage(image.OpenReadStream(), fileStream, ImageOptions());
                 }
 
+              
                 return fileName;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return "Error";
+                return "Error while saving image";
             }
         }
 
+        ////image scaler settings
+        //private ProcessImageSettings ImageOptions() => new ProcessImageSettings
+        //{
+        //    Width = 800,
+        //    Height = 500,
+        //    ResizeMode = CropScaleMode.Crop,
+        //    SaveFormat = FileFormat.Jpeg,
+        //    JpegQuality = 100,
+        //    JpegSubsampleMode = ChromaSubsampleMode.Subsample420
+        //};
 
     }
 }
