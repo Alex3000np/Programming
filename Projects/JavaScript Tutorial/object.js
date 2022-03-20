@@ -50,3 +50,33 @@
 //     postQty,
 //     hasSighnedAgreement: false
 // }
+
+//### Object mutation
+const myPersonA = {
+    name: 'alex',
+    age: 20
+}
+// const myPersonB = myPersonA
+// myPersonB.name = 'pavel'        //this will ch myPersonA name too!
+// console.log(myPersonA.name)     //result object: pavel
+
+//### Avoid object mutation A* 
+// const myPersonB = Object.assign({},myPersonA)  
+// myPersonB.name = 'petro'
+// console.log(myPersonA.name) 
+// console.log(myPersonB.name)
+
+//### Avoid object mutation B
+// const myPersonB = {...myPersonA}
+// myPersonB.name = 'lida'
+// console.log(myPersonA.name)
+// console.log(myPersonB.name)
+//* both examples works ok only with simple object without nested object inside. 
+// note taht change of nested field will mutate nested object
+
+//### Avoid object mutation C*
+const myPersonC = JSON.parse(JSON.stringify(myPersonA))
+myPersonC.name = 'ivan'
+console.log(myPersonA.name)
+console.log(myPersonC.name)
+//* example works ok with nested object inside, change will not affect original nested object
