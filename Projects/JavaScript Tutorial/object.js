@@ -52,10 +52,10 @@
 // }
 
 //### Object mutation
-const myPersonA = {
-    name: 'alex',
-    age: 20
-}
+// const myPersonA = {
+//     name: 'alex',
+//     age: 20
+// }
 // const myPersonB = myPersonA
 // myPersonB.name = 'pavel'        //this will ch myPersonA name too!
 // console.log(myPersonA.name)     //result object: pavel
@@ -75,8 +75,18 @@ const myPersonA = {
 // note taht change of nested field will mutate nested object
 
 //### Avoid object mutation C*
-const myPersonC = JSON.parse(JSON.stringify(myPersonA))
-myPersonC.name = 'ivan'
-console.log(myPersonA.name)
-console.log(myPersonC.name)
+// const myPersonC = JSON.parse(JSON.stringify(myPersonA))
+// myPersonC.name = 'ivan'
+// console.log(myPersonA.name)
+// console.log(myPersonC.name)
 //* example works ok with nested object inside, change will not affect original nested object
+
+//### Object destructuring
+// const userProfile = {
+//     name: 'alexandr',
+//     commentsQty: 23,
+//     hasAgreement: true
+// }
+// const { name, commentsQty } = userProfile // creates new variables based on user object properties 
+// const { hasAgreement } = userProfile
+// console.log(name)                         // result: alexandr

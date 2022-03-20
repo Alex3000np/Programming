@@ -6,6 +6,7 @@ Node.js
 
 Json.js
 -json convertation 
+-Error try & catch 
 
 Index.js
 -Function
@@ -13,5 +14,14 @@ Index.js
 
 Object.js
 -Object mutation
+-Object destructuring
 
 Method.js
+-Array
+-Method
+-For & Foreach
+-Map
+-Array destructuring
+
+Function.js
+-Arrow function 
