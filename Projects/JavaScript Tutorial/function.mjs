@@ -51,3 +51,21 @@
 
 //### Arrow function isnide another function
 //setTimeout(()=> { console.log('delayed message') }, 2000)
+
+//### Import (from index.mjs - file has to be.mjs)
+// import findSum from './index.mjs'
+// let iportedFunct = findSum(5, 3)
+// console.log(iportedFunct)
+
+// import {
+//     one,
+//     two as twoRenamed   //we can rename variables 
+// } from './index.mjs'
+// console.log(`${one} and ${twoRenamed}`)
+
+fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => {
+        console.log(response)
+        return response.json()
+    })
+    .then(json => console.log(json))

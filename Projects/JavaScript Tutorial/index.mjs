@@ -51,4 +51,14 @@
 // }
 // console.table(myButtonJoined)
 
+//### Export  (to "function.mjs" - file has to be.mjs)
+const findSum = (a, b) => a + b
+export default findSum
+
+const one = 1
+const two = 'two'
+
+export { one, two }
+
+
 

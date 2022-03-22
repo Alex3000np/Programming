@@ -21,3 +21,13 @@
 //     console.log(error.message)
 // }
 // console.log('continue')     //this will appear in console due to try/catch
+
+//### Conditional Statement IF
+const age = 8
+if (age > 18) {
+    console.log('Is Adult')
+} else if (age >= 12) {
+    console.log('Is Teenager')
+} else {
+    console.log('Is Child')
+}

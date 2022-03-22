@@ -90,3 +90,18 @@
 // const { name, commentsQty } = userProfile // creates new variables based on user object properties 
 // const { hasAgreement } = userProfile
 // console.log(name)                         // result: alexandr
+
+//### Object destructuring in function
+// const user = {
+//     name: 'pepa',
+//     commentsQty: 23,
+//     hasAgreement: true
+// }
+
+// const showUserData = ({ name, commentsQty }) => {
+//     if (!commentsQty) {
+//         return `user ${name} has no comments`
+//     }
+//     return `user ${name} has ${commentsQty} comments`
+// }
+// console.log(showUserData(user)) 

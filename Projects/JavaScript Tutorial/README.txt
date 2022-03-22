@@ -7,10 +7,12 @@ Node.js
 Json.js
 -json convertation 
 -Error try & catch 
+-Conditional Statement IF
 
 Index.js
 -Function
 -Logical operator 
+-Export/Import
 
 Object.js
 -Object mutation
@@ -19,9 +21,10 @@ Object.js
 Method.js
 -Array
 -Method
--For & Foreach
+-For, For each, for in, for of
 -Map
 -Array destructuring
 
 Function.js
 -Arrow function 
+-Export/Import
