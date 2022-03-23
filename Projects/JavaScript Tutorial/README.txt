@@ -8,6 +8,7 @@ Json.js
 -json convertation 
 -Error try & catch 
 -Conditional Statement IF
+-Promise, async, await
 
 Index.js
 -Function
