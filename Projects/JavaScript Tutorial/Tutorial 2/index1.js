@@ -42,15 +42,16 @@
 // }
 
 // by using 'bind' we can apply personPetr function for personLena object 
-// option a with 'function':
+
+// option a. with 'function':
 // const lenasInfo = personPetr.getInfo.bind(personLena)
 // lenasInfo('soldger','78-38-33')
 
-// option b with 'bind' (we fill in personLena context and params):
+// option b. with 'bind' (we fill in personLena context and params):
 // const lenasInfo = personPetr.getInfo.bind(personLena, 'programmer', '78-38-33')
 // lenasInfo()
 
-// option c with 'call' or 'apply' are called imidiately 
+// option c. with 'call' or 'apply' are called imidiately 
 // personPetr.getInfo.call(personLena, 'doctor', '78-38-99')       // (fill in personLena context and params):
 // personPetr.getInfo.apply(personLena, ['pilot', '100-38-99'])    // (fill in personLena context and params as array):
 
