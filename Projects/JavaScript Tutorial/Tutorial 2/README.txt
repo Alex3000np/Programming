@@ -13,3 +13,9 @@ Visual studio code
 ### index3
 4. Aync and Event Loop
 5. Promise
+
+### index4
+6. Object.create, getters, setters
+
+### index5
+7. Class
