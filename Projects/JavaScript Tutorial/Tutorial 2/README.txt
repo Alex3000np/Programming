@@ -19,3 +19,9 @@ Visual studio code
 
 ### index5
 7. Class
+
+### index6
+8. Async/Await, fetch
+
+### index7
+9. Proxy - objects, functions, classes
