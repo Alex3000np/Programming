@@ -25,3 +25,11 @@ Visual studio code
 
 ### index7
 9. Proxy - objects, functions, classes
+10. -//-
+11. Generator. Symbol iterator, for of
+
+### index8
+12. Array methods: forEach, map, filter, reduce, find, findIndex
+
+### index9
+13. Map, Set, WeakMap, WeakSet
