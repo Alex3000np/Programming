@@ -162,13 +162,13 @@
 // ]
 
 //const visitsSet = new WeakSet(myUsers)      // add whole array
-const visitsSet = new WeakSet()
-visitsSet.add(myUsers[0]).add(myUsers[1])       // add one by one 
+// const visitsSet = new WeakSet()
+// visitsSet.add(myUsers[0]).add(myUsers[1])       // add one by one 
 
-console.log(visitsSet.has(myUsers[0])) //true
-console.log(visitsSet.has(myUsers[1])) //true
+// console.log(visitsSet.has(myUsers[0])) //true
+// console.log(visitsSet.has(myUsers[1])) //true
 
-myUsers.splice(1, 1)                   //deletes object from initial array; (index 1 and number 1 of elements for deletion)
+// myUsers.splice(1, 1)                   //deletes object from initial array; (index 1 and number 1 of elements for deletion)
 
-console.log(visitsSet.has(myUsers[0])) //true
-console.log(visitsSet.has(myUsers[1])) //false
+// console.log(visitsSet.has(myUsers[0])) //true
+// console.log(visitsSet.has(myUsers[1])) //false

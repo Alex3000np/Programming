@@ -33,3 +33,9 @@ Visual studio code
 
 ### index9
 13. Map, Set, WeakMap, WeakSet
+
+### index10
+14. Server requests - Fetch, XMLHttpRequest (XHR), Ajax
+
+### index11
+15. Spread & Rest
