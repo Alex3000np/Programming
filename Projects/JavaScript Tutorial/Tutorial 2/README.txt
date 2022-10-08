@@ -39,3 +39,6 @@ Visual studio code
 
 ### index11
 15. Spread & Rest
+
+### index12
+16. Destructuring assignment
