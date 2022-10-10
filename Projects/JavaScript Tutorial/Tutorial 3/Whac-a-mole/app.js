@@ -32,8 +32,7 @@ squares.forEach(square => {
 
 //mole printing timer
 function moveMole() {
- 
-    timerId = setInterval(randomSquare, 1000)
+     timerId = setInterval(randomSquare, 1000)
 }
 
 moveMole()
