@@ -13,6 +13,8 @@ console.log(squares)
 let currentIndex = 76
 const width = 9
 let timerId
+let outcomeTimerId
+let currentTime = 20
 
 //frog moving logic:
 function moveFrog(e) {
@@ -44,15 +46,22 @@ function moveFrog(e) {
     squares[currentIndex].classList.add('frog') //adds html class 'frog' to selected square
 }
 
-document.addEventListener('keyup', moveFrog)
+
 
 //moving logic for blocks:
 function autoMoveElements() {
+    currentTime--
+    timeLeftDisplay.textContent = currentTime
+
     logsLeft.forEach(logLeft => moveLogLeft(logLeft))
     logsRight.forEach(logRight => moveLogRight(logRight))
     carsLeft.forEach(carLeft => moveCarLeft(carLeft))
     carsRight.forEach(carRight => moveCarRight(carRight))
+}
+
+function checkOutcoms() {
     lose()
+    win()
 }
 
 function moveLogLeft(logLeft) {
@@ -139,14 +148,45 @@ function moveCarRight(carRight) {
     }
 }
 
-// Lose logic:
+// Lose check logic:
 function lose() {
-    if (squares[currentIndex].classList.contains('c1')) {
+    if (squares[currentIndex].classList.contains('c1') ||       // hit by car
+        squares[currentIndex].classList.contains('l4') ||       // felt in water 
+        squares[currentIndex].classList.contains('l5') ||
+        currentTime <= 0
+    ) {                                                         // no time left
         resultDisplay.textContent = 'You Lose!'
         clearInterval(timerId)
+        clearInterval(outcomeTimerId)
         squares[currentIndex].classList.remove('frog')
         document.removeEventListener('keyup', moveFrog)
     }
+
 }
 
-timerId = setInterval(autoMoveElements, 1000)
+// Win check logic:
+function win() {
+    if (squares[currentIndex].classList.contains('ending-block')) {
+        resultDisplay.textContent = 'You Win!'
+        clearInterval(timerId)
+        clearInterval(outcomeTimerId)
+        document.removeEventListener('keyup', moveFrog)
+    }
+
+}
+
+startPauseButton.addEventListener('click', () => {     // function: "()=>" 
+    if (timerId) {                                     // if timerId exists (not "clered interval")
+        clearInterval(timerId)
+        clearInterval(outcomeTimerId)
+        outcomeTimerId = null
+        timerId = null
+        document.removeEventListener('keyup', moveFrog)
+
+    } else {
+        timerId = setInterval(autoMoveElements, 1000)
+        outcomeTimerId = setInterval(checkOutcoms, 50)
+        document.addEventListener('keyup', moveFrog)
+    }
+})
+
