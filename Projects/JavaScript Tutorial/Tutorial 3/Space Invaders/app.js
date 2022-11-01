@@ -6,6 +6,8 @@ let width = 15
 let direction = 1
 let invadersId
 let goingRight = true
+let aliensRemoved = []
+let results = 0
 
 //creates <div> elemants in grid html:
 for (let i = 0; i < 225; i++) {
@@ -24,7 +26,9 @@ const alienInvaders = [
 //draw/remove invader:
 function draw() {
     for (let i = 0; i < alienInvaders.length; i++) {
-        squares[alienInvaders[i]].classList.add('invader')
+        if (!aliensRemoved.includes(i)) {
+            squares[alienInvaders[i]].classList.add('invader')
+        }
     }
 }
 
@@ -90,7 +94,7 @@ function moveInvaders() {
 
     draw()
 
-    //check game over conditions:
+    //check 'game over' conditions:
     if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
         resultDisplay.innerHTML = "game over :( "
         clearInterval(invadersId)
@@ -102,19 +106,43 @@ function moveInvaders() {
             clearInterval(invadersId)
         }
     }
+    //check 'win' conditions:
+    if (alienInvaders.length === aliensRemoved.length) {
+        resultDisplay.innerHTML = "you win :) "
+        clearInterval(invadersId)
+    }
+
 }
 
-invadersId = setInterval(moveInvaders, 100)
+invadersId = setInterval(moveInvaders, 300)
 //-------------------------------------------------------------------------------------
 //shooting feature 
 function shoot(e) {
     let laserId
     let currentLaserIndex = currentShooterIndex
+
     function moveLaser() {
         squares[currentLaserIndex].classList.remove('laser')
         currentLaserIndex -= width
         squares[currentLaserIndex].classList.add('laser')
+
+        //colision alien vs laser:
+        if (squares[currentLaserIndex].classList.contains('invader')) {
+            squares[currentLaserIndex].classList.remove('laser')
+            squares[currentLaserIndex].classList.remove('invader')
+            squares[currentLaserIndex].classList.add('boom')
+            setTimeout(() => squares[currentLaserIndex].classList.remove('boom'), 300)
+            clearInterval(laserId)
+
+            //removing killed aliens 
+            const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
+            aliensRemoved.push(alienRemoved)
+            console.log(aliensRemoved)
+            results++
+            resultDisplay.innerHTML = results
+        }
     }
+
     switch (e.key) {
         case 'ArrowUp':
             laserId = setInterval(moveLaser, 100)
@@ -122,5 +150,5 @@ function shoot(e) {
 }
 
 document.addEventListener('keydown', shoot)
-//4.39
+
 //-------------------------------------------------------------------------------------
