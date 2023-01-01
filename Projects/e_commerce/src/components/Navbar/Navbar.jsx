@@ -24,7 +24,7 @@ const Navbar = () => {
                     {/* cart button: */}
                     <div className={classes.button}>
                         <IconButton area-label='Show cart items' color='inherit'>
-                            <Badge badgeContent={2} color="secondary">
+                            <Badge overlap="rectangular" badgeContent={2} color="secondary">
                                 <ShoppingCart />
                             </Badge>
                         </IconButton>
