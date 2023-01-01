@@ -4,12 +4,10 @@ import { AddShoppingCart } from "@material-ui/icons";
 
 import useStyles from "./styles";        //import of styles
 
+// receiving "product" as parameter
 const Product = ({ product }) => {
     const classes = useStyles();         //application of styles
-    //
-    // console.log(product)
-    // return <div> test </div>
-    //
+     
     return (
         <Card className={classes.root}>
 
