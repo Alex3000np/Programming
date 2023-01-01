@@ -6,12 +6,15 @@ import useStyles from "./styles";        //import of styles
 
 const Product = ({ product }) => {
     const classes = useStyles();         //application of styles
-
+    //
+    // console.log(product)
+    // return <div> test </div>
+    //
     return (
         <Card className={classes.root}>
 
             {/* Product image: */}
-            <CardMedia className={classes.media} image={product.image} title={product.name} />
+            <CardMedia className={classes.media} image={product.image?.url} title={product.name} />
 
             <CardContent>
                 {/* item name and price: */}
@@ -21,11 +24,11 @@ const Product = ({ product }) => {
                     </Typography>
 
                     <Typography variant="h5" >
-                        {product.price}
+                        {product.price.formatted_with_symbol}
                     </Typography>
                 </div>
                 {/* item description: */}
-                <Typography variant="body2" color="textSecondary">{product.description}</Typography>
+                <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" />
             </CardContent>
 
             {/* add to cart button */}
