@@ -6,7 +6,7 @@ import { ShoppingCart } from '@material-ui/icons';
 import logo from "../../assets/logo.webp"   //picture for navigation bar
 import useStyles from "./styles";           //import of styles
 
-const Navbar = () => {
+const Navbar = ({totalItems}) => {
     const classes = useStyles()             //application of styles
 
     return (
@@ -24,7 +24,7 @@ const Navbar = () => {
                     {/* cart button: */}
                     <div className={classes.button}>
                         <IconButton area-label='Show cart items' color='inherit'>
-                            <Badge overlap="rectangular" badgeContent={2} color="secondary">
+                            <Badge overlap="rectangular" badgeContent={totalItems} color="secondary">
                                 <ShoppingCart />
                             </Badge>
                         </IconButton>
