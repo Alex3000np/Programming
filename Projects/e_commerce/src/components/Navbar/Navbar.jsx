@@ -6,7 +6,8 @@ import { ShoppingCart } from '@material-ui/icons';
 import logo from "../../assets/logo.webp"   //picture for navigation bar
 import useStyles from "./styles";           //import of styles
 
-const Navbar = ({totalItems}) => {
+//'Navbar' accepts 'totalItems' property:
+const Navbar = ({ totalItems }) => {
     const classes = useStyles()             //application of styles
 
     return (

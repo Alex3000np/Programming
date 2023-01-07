@@ -5,6 +5,7 @@ import Product from "./Product/Product";    //import of "Product"
 
 import useStyles from "./styles";           //import of styles
 
+//'Products' accepts 'products', 'onAddToCart' property:
 const Products = ({ products, onAddToCart }) => {
     const classes = useStyles();            //application of styles
 
