@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 //backend API for products (creatiing, deleteing, selling...):
 import { commerce } from './lib/commerce';
-
-import { Products, Navbar } from "./components";
+// Imports from "components" folder:
+import { Products, Navbar, Cart } from "./components";
 
 const App = () => {
 
@@ -41,7 +41,8 @@ const App = () => {
   return (
     <div>
       <Navbar totalItems={cart.total_items} />
-      <Products products={products} onAddToCart={handleAddtoCart} />
+      {/* <Products products={products} onAddToCart={handleAddtoCart} /> */}
+      <Cart cart={cart} />
     </div>
   )
 }
