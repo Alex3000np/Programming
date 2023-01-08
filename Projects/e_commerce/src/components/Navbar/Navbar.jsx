@@ -8,7 +8,7 @@ import useStyles from "./styles";           //import of styles
 
 //'Navbar' accepts 'totalItems' property:
 const Navbar = ({ totalItems }) => {
-    const classes = useStyles()             //application of styles
+    const classes = useStyles()             //application of styles.js
 
     return (
         <>

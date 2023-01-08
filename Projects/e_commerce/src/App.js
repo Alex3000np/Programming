@@ -5,6 +5,7 @@ import { commerce } from './lib/commerce';
 // Imports from "components" folder:
 import { Products, Navbar, Cart } from "./components";
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1.14.00
 const App = () => {
 
   //Objects (products, cart):
@@ -35,7 +36,7 @@ const App = () => {
 
   //test products, cart. (delete):
   //console.log(products);
-  console.log(cart);
+  //console.log(cart);
   //commerce.cart.delete().
 
   return (
