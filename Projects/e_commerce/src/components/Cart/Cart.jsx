@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Container, Typography, Button, Grid } from "@material-ui/core";
 import useStyles from "./styles"    //import of styles.js
 import CartItem from "./CartItem/CartItem";
@@ -8,12 +9,12 @@ import CartItem from "./CartItem/CartItem";
 const Cart = ({ cart }) => {
     const classes = useStyles();      //application of styles.js
 
-    // 1. if cart is empty
+    // 1. function - if cart is empty:
     const EmptyCart = () => (
         <Typography variant="subtitle1">You have no items in your shopping cart, start adding some!</Typography>
     );
 
-    // 2. if cart is populated
+    // 2. function - if cart is populated:
     const FilledCart = () => (
         <>
             <Grid container spacing={3}>
@@ -27,14 +28,14 @@ const Cart = ({ cart }) => {
             <div className={classes.cardDetails}>
                 <Typography variant="h4">Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
                 <div>
-                    <button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary">Empty Cart</button>
-                    <button className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</button>
+                    <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary">Empty Cart</Button>
+                    <Button className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
                 </div>
             </div>
         </>
     );
 
-    //check if cart has products
+    //check if cart has products to prevent an error
     if (!cart.line_items) return 'Loading';
 
     return (

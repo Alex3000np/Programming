@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-//backend API for products (creatiing, deleteing, selling...):
+//Adds backend API for products (creatiing, deleteing, selling...):
 import { commerce } from './lib/commerce';
 // Imports from "components" folder:
 import { Products, Navbar, Cart } from "./components";
@@ -11,7 +11,7 @@ const App = () => {
   const [products, setProducts] = useState([])
   const [cart, setCart] = useState({});
 
-  //fn gets items from API (products, cart):
+  // functions - gets items from API (products, cart) and sets its value:
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
     setProducts(data);
@@ -21,7 +21,7 @@ const App = () => {
     setCart(await commerce.cart.retrieve());
   };
 
-  //fn adds products to cart
+  // function - adds products to cart
   const handleAddtoCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
     setCart(item)
@@ -33,15 +33,20 @@ const App = () => {
     fetchCart();
   }, []);
 
-  //test products, cart. (delete):
+  //test - products, cart, cart deletion. (Do delete, once not needed):
   //console.log(products);
   //console.log(cart);
   //commerce.cart.delete().
 
   return (
     <div>
+      {/* Navbar imported from 'components' */}
       <Navbar totalItems={cart.total_items} />
+      
+      {/* Products imported from 'components' */}
       {/* <Products products={products} onAddToCart={handleAddtoCart} /> */}
+      
+      {/* Cart imported from 'components' */}
       <Cart cart={cart} />
     </div>
   )

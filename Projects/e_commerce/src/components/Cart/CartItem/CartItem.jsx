@@ -7,6 +7,7 @@ import useStyles from './styles';   //import of styles.js
 const CartItem = ({ item }) => {    //receiving item as property
 
     const classes = useStyles();    //application of styles.js
+    
     return (
         <Card>
             <CardMedia image={item.image.url} alt={item.name} className={classes.media} />
