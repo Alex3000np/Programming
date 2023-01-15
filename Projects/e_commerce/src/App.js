@@ -4,8 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
 // Imports from "components" folder:
 import { Products, Navbar, Cart } from "./components";
+// Router functionality, to traverse pages:
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-const App = () => {
+const App = () => { //-------1.27.30
 
   //Objects (products, cart):
   const [products, setProducts] = useState([])
@@ -39,16 +41,19 @@ const App = () => {
   //commerce.cart.delete().
 
   return (
-    <div>
-      {/* Navbar imported from 'components' */}
-      <Navbar totalItems={cart.total_items} />
-      
-      {/* Products imported from 'components' */}
-      {/* <Products products={products} onAddToCart={handleAddtoCart} /> */}
-      
-      {/* Cart imported from 'components' */}
-      <Cart cart={cart} />
-    </div>
+    //wraps entire application into 'Router':
+    <Router>
+      <div>
+        <Navbar totalItems={cart.total_items} />  {/* Navbar imported from 'components' */}
+
+        {/* "Routes" shows 'products' or 'cart' - deponds on 'Route path' */}
+        <Routes>
+          <Route path="/" element={<Products products={products} onAddToCart={handleAddtoCart} />} />  {/* Products imported from 'components' */}
+          <Route path="/cart" element={<Cart cart={cart} />} />  {/* Cart imported from 'components' */}
+        </Routes>
+      </div>
+    </Router>
+
   )
 }
 

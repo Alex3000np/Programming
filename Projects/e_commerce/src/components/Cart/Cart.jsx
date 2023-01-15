@@ -3,6 +3,8 @@ import React from "react";
 import { Container, Typography, Button, Grid } from "@material-ui/core";
 import useStyles from "./styles"    //import of styles.js
 import CartItem from "./CartItem/CartItem";
+//Link functionality:
+import { Link } from 'react-router-dom';
 
 
 //takes "cart" as property:
@@ -11,7 +13,9 @@ const Cart = ({ cart }) => {
 
     // 1. function - if cart is empty:
     const EmptyCart = () => (
-        <Typography variant="subtitle1">You have no items in your shopping cart, start adding some!</Typography>
+        <Typography variant="subtitle1">You have no items in your shopping cart, please
+            <Link to='/' className={classes.link}>start adding some</Link>!
+        </Typography>
     );
 
     // 2. function - if cart is populated:
