@@ -7,7 +7,7 @@ import { Products, Navbar, Cart } from "./components";
 // Router functionality, to traverse pages:
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-const App = () => { //-------1.27.30
+const App = () => { //-------1.27.31
 
   //Objects (products, cart):
   const [products, setProducts] = useState([])
