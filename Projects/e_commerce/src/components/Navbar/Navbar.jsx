@@ -29,7 +29,8 @@ const Navbar = ({ totalItems }) => {
                         <div className={classes.button}>
                             {/* 'IconButton' also serves as a link to /cart page */}
                             <IconButton component={Link} to="/cart" area-label='Show cart items' color='inherit'>
-                                <Badge overlap="rectangular" badgeContent={totalItems} color="secondary">   
+                                {/* 'overlap' fixes version error */}
+                                <Badge overlap="rectangular" badgeContent={totalItems} color="secondary">
                                     <ShoppingCart />
                                 </Badge>
                             </IconButton>
