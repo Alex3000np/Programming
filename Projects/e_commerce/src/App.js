@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-//Adds backend API for products (creatiing, deleteing, selling...):
+//Adds backend API for products (creatiing, deleteing, selling...): xxxxxxxxxxxx 1 49 50 make comments retrospectivly 
 import { commerce } from './lib/commerce';
 //Imports from "components" folder:
-import { Products, Navbar, Cart } from "./components";
+import { Products, Navbar, Cart, Checkout } from "./components";
 //Router functionality, to traverse pages:
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -66,9 +66,11 @@ const App = () => {
             handleUpdateCartQty={handleUpdateCartQty}
             handleRemoveFromCart={handleRemoveFromCart}
             handleEmptyCart={handleEmptyCart} />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
+
       </div>
-    </Router>
+    </Router >
 
   )
 }
